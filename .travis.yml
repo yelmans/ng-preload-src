@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+install: make install
+script: make test
+addons:
+  sauce_connect: true
+env:
+  global:
+  - secure: BTijPps+dJu/78NH/Xvv2/TG7R+WhTlecUpe4FXszaTbIpYRj18UtaCLdZ2j6X5gxRTg2AYHVJP+XEsx0HJ+FuiPvvBJI43eyFmsfPZ4iBxpeVfsK55dAYZ1oYasEFBPso+NS53O5zvLf/Jq/4PknaUPbUYu4uXc/euGICcrm8U=
+  - secure: pM2Ak7BzOEfeGttG0UfDwxbPwhaSVi8r0bY6ZhMrkctjmIUlTrlLPOLqYN3NZEgLvymh7KZx/vnGuhQFNAWinollXWBIgnXU9T3baFeOGGW0Y3iuImKrk8F3v3RHvY11H2qeWu3OkKmbiVJnzRXsKPv3s5JjmWGy5JLEjlGQDCc=
+  - secure: iuzKBLvvYv6Mc2BDauqnEKg+PtR28g7+ll0GKho8lx4vMXm6hg3Jt2BFsTijFgLI4R8WHBMhFlb74nGRmEp52f7H7mreMlHa99jACWBbmDV03OduoSaAKXB8nJnMytmrchF0rZ8aLSR8nimqaUaJ0qwUPCQPgy3m9CzaXdYWkxE=
