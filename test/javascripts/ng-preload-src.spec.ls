@@ -1,11 +1,11 @@
-(...) <-! describe 'ng-preload-src module'
+(...) <-! describe 'module ng-preload-src'
 it 'should be defined' !(...) ->
-  expect ng-preload-src .toBeDefined!
+  expect tc-ng-boilerplate .toBeDefined!
 
 it 'should return true value' !(...) ->
-  const value = ng-preload-src {}
+  const value = tc-ng-boilerplate {}
   expect value .toEqual true
 
 it 'should return false value' !(...) ->
-  const value = ng-preload-src ''
+  const value = tc-ng-boilerplate ''
   expect value .toEqual false
