@@ -1,15 +1,15 @@
 # ng-preload-src
 > Distributed via
 
-[![Version     ](https://img.shields.io/gem/v/ng-preload-src.svg)                               ](https://rubygems.org/gems/ng-preload-src)
-[![Bower version](https://badge.fury.io/bo/ng-preload-src.png)](https://badge.fury.io/bo/ng-preload-src)
+[![Version     ](https://img.shields.io/gem/v/ng-preload-src.svg)                                   ](https://rubygems.org/gems/ng-preload-src)
+[![Bower version](https://badge.fury.io/bo/ng-preload-src.svg)                                      ](https://badge.fury.io/bo/ng-preload-src)
 
 > Image preload directive for AngularJS
 
-[![Travis CI   ](https://img.shields.io/travis/tomchentw/ng-preload-src/master.svg)             ](https://travis-ci.org/tomchentw/ng-preload-src)
-[![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/ng-preload-src.svg)        ](https://codeclimate.com/github/tomchentw/ng-preload-src)
-[![Coverage    ](https://img.shields.io/coveralls/tomchentw/ng-preload-src.svg)                 ](https://coveralls.io/r/tomchentw/ng-preload-src)
-[![Dependencies](https://img.shields.io/gemnasium/tomchentw/ng-preload-src.svg)                 ](https://gemnasium.com/tomchentw/ng-preload-src)
+[![Travis CI   ](https://travis-ci.org/tomchentw/ng-preload-src.svg?branch=master)                  ](https://travis-ci.org/tomchentw/ng-preload-src)
+[![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/ng-preload-src.svg)            ](https://codeclimate.com/github/tomchentw/ng-preload-src)
+[![Coverage    ](https://img.shields.io/coveralls/tomchentw/ng-preload-src.svg)                     ](https://coveralls.io/r/tomchentw/ng-preload-src)
+[![Dependencies](https://gemnasium.com/tomchentw/ng-preload-src.svg)                                ](https://gemnasium.com/tomchentw/ng-preload-src)
 
 
 ## Project philosophy
@@ -30,6 +30,7 @@ Then include them through script tag in your HTML.
 ### **Rails** projects (Only support 3.1+)
 
 Add this line to your application's Gemfile:
+
 ```ruby
 gem 'ng-preload-src'
 ```
@@ -46,10 +47,10 @@ Then add these lines to the top of your `app/assets/javascripts/application.js` 
 ```
 
 And include in your `angular` module definition:
-    
-    /* 'ng-preload-src' module.
-     */    
-    var module = angular.module('my-awesome-project', ['ng-preload-src']).
+
+```javascript
+var module = angular.module('my-awesome-project', ['ng-preload-src']).
+```
 
 
 ## Usage
