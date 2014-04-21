@@ -1,6 +1,6 @@
 {
   "name": "ng-preload-src",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Image preload directive for AngularJS",
   "longDescription": "Image preload directive for AngularJS without jQuery dependency",
   "main": "ng-preload-src.js",
