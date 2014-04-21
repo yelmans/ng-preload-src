@@ -1,6 +1,6 @@
 angular.module 'application' <[
   ui.bootstrap
   ga
-  ngSanitize
+  angular-loading-bar
   ng-preload-src
 ]>
