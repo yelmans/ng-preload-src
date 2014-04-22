@@ -1,42 +1,45 @@
 /*global angular:false*/
 angular.module 'ng-preload-src' <[]>
-.service 'ImgPreloader' <[
-       $document  $q
-]> ++ ($document, $q) ->
-  const {element} = angular
-  const $parent   = element '<div class="ng-hide"></div>'
- 
-  $document.find 'body' .append $parent
- 
-  ImgPreloader::load = ->
-    const {url, defer} = @
-    const $img = element "<img src='#{ url }'>"
-    
-    $img.on 'load' !->
-      $img.remove!
-      defer.resolve url
- 
-    $parent.append $img
+.factory '$image' <[
+       $window  $q
+]> ++ ($window, $q) ->
+
+  preload: (url) ->
+    const defer = $q.defer!
+    const image = new $window.Image
+    image.src = url
+
+    angular
+      .element image
+      .on 'load' angular.bind(defer, defer.resolve, url)
+
     defer.promise
  
-  !function ImgPreloader (@url)
-    @defer = $q.defer!
- 
 .directive 'preloadWithDefaultSrc' <[
-       $interpolate  ImgPreloader
-]> ++ ($interpolate, ImgPreloader) ->
-  const {bind} = angular
+       $interpolate  $image
+]> ++ ($interpolate, $image) ->
 
-  !function changeFn (setter, url)
-    new ImgPreloader url .load!then setter
- 
-  !function postLinkFn ($scope, $element, $attrs) 
-    $scope.$watch do
-      $interpolate $attrs.preloadSrc
-      bind void, changeFn, bind($attrs, $attrs.$set, 'ngSrc')
- 
-  compile: (tElement, tAttrs) ->
+  class PreloadCtrl
+    onSrcChanged: !(newUrl) ->
+      @$attrs.$set 'ngSrc', @$attrs.preloadWithDefaultSrc
+      @lastUrl = newUrl
+      $image.preload newUrl .then @onImageLoaded
+
+    onImageLoaded: !(newUrl) ->
+      @$attrs.$set 'ngSrc', newUrl if @lastUrl is newUrl
+
+    @$inject = <[
+       $scope   $attrs ]>
+    !(@$scope, @$attrs) ->
+
+      @lastUrl = void
+      @onImageLoaded = angular.bind @, @onImageLoaded
+
+      $scope.$watch do
+        $interpolate $attrs.preloadSrc
+        angular.bind @, @onSrcChanged
+
+  controller: PreloadCtrl
+  compile: !(tElement, tAttrs) ->
     tAttrs.$set 'preloadSrc' tAttrs.ngSrc
     tAttrs.$set 'ngSrc' tAttrs.preloadWithDefaultSrc
- 
-    postLinkFn
