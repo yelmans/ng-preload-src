@@ -1,17 +1,26 @@
 /*global angular:false*/
 angular.module 'ng-preload-src' <[]>
 .factory '$image' <[
-       $window  $q
-]> ++ ($window, $q) ->
+       $window  $q  $injector
+]> ++ ($window, $q, $injector) ->
+
+  const cfpLoadingBar = $injector.get 'cfpLoadingBar' or do
+    start: angular.noop
+    complete: angular.noop
+
+  !function onLoadEvent (url)
+    cfpLoadingBar.complete!
+    @resolve url
 
   preload: (url) ->
     const defer = $q.defer!
     const image = new $window.Image
     image.src = url
-
+    
+    cfpLoadingBar.start 0
     angular
       .element image
-      .on 'load' angular.bind(defer, defer.resolve, url)
+      .on 'load' angular.bind(defer, onLoadEvent, url)
 
     defer.promise
  
