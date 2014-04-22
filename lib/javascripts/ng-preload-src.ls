@@ -1,4 +1,6 @@
 /*global angular:false*/
+let angular = angular
+
 angular.module 'ng-preload-src' <[]>
 .factory '$image' <[
        $window  $q  $injector
