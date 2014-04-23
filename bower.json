@@ -33,7 +33,7 @@
     "Makefile",
     "package.json",
     "Rakefile",
-    "tc-ng-boilerplate.gemspec"
+    "ng-preload-src.gemspec"
   ],
   "dependencies": {
     "angular": "~1.2.13"
