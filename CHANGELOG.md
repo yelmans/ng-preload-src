@@ -1,3 +1,12 @@
+<a name="0.0.3"></a>
+### 0.0.3  (2014-04-23)
+
+
+#### Features
+
+* **preloadWithDefaultSrc:** trigger loading bar in directive ([b9ae4435](https://github.com/tomchentw/ng-preload-src/commit/b9ae44351bfa51ddf4440ee05c95de08be92b5e8))
+
+
 <a name="0.0.2"></a>
 ### 0.0.2  (2014-04-23)
 
