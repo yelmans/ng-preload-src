@@ -56,7 +56,7 @@ let angular = angular, bind = angular.bind, noop = angular.noop
           @@cfpLoadingBar.complete!
           @@reqsCompleted = @@reqsTotal = 0
         else
-          cfpLoadingBar.set @@reqsCompleted / @@reqsTotal
+          @@cfpLoadingBar.set @@reqsCompleted / @@reqsTotal
 
       @$inject = <[
          $scope   $attrs ]>
