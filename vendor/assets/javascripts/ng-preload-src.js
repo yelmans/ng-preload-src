@@ -1,4 +1,4 @@
-/*! ng-preload-src - v 0.0.3 - Wed Apr 23 2014 11:47:00 GMT+0800 (CST)
+/*! ng-preload-src - v 0.0.4 - Tue Apr 29 2014 17:48:17 GMT+0800 (CST)
  * https://github.com/tomchentw/ng-preload-src
  * Copyright (c) 2014 [tomchentw](https://github.com/tomchentw);
  * Licensed [MIT](http://tomchentw.mit-license.org)
@@ -61,7 +61,7 @@
           constructor.cfpLoadingBar.complete();
           constructor.reqsCompleted = constructor.reqsTotal = 0;
         } else {
-          cfpLoadingBar.set(constructor.reqsCompleted / constructor.reqsTotal);
+          constructor.cfpLoadingBar.set(constructor.reqsCompleted / constructor.reqsTotal);
         }
       };
       PreloadCtrl.$inject = ['$scope', '$attrs'];

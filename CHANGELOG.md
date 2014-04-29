@@ -1,3 +1,12 @@
+<a name="0.0.4"></a>
+### 0.0.4  (2014-04-29)
+
+
+#### Bug Fixes
+
+* **PreloadCtrl:** add @@ prefix ([1f62accd](https://github.com/tomchentw/ng-preload-src/commit/1f62accd6222b64697581465eca39d6ffc3740f0))
+
+
 <a name="0.0.3"></a>
 ### 0.0.3  (2014-04-23)
 
